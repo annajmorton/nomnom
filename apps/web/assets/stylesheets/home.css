@@ -1,0 +1,14 @@
+body { 
+	padding-top: 70px;
+	padding-bottom: 70px; 
+}
+
+.navbar-fixed-top {
+	color: white;
+	background-color: #14e809;
+}
+
+.navbar-fixed-bottom {
+	color: white;
+	background-color: #000000;
+}

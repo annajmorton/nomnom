@@ -1,0 +1,4 @@
+project=nomnom
+architecture=container
+test=minitest
+template=erb

@@ -1,0 +1,58 @@
+<h2>Share a meal</h2>
+
+<% unless params.valid? %>
+	<div class='errors'>
+		<h3>There was a problem with your submission</h3>
+		<ul>
+			<% params.error_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%=
+	form_for :meal, '/meals', enctype: 'multipart/form-data' do
+
+		div class: 'input' do
+			label		:title
+			text_field 	:title
+		end
+
+		div class: 'input' do
+			label		:description
+			text_field	:description
+		end 
+
+		div class: 'input' do
+			label		'Photo', for: :photo
+			file_field	:photo, accept: 'application/png,application/pdf,application/jpeg,application/jpg'
+		end 
+
+		div class: 'input' do
+			label		:quantity
+			text_field	:quantity
+		end 
+
+		div class: 'input' do
+			label		:servings
+			text_field	:servings
+		end 
+
+		div class: 'input' do
+			label		'Pickup Location', for: :pickup_location
+			text_field	:pickup_location
+		end 
+
+		div class: 'input' do
+			label		'Provider Id', for: :provider_id
+			text_field	:provider_id
+		end 
+
+		div class: 'controls' do
+			submit 'Post Meal'
+		end
+	
+	end
+
+%>

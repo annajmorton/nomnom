@@ -1,0 +1,34 @@
+<h2>create an account with us and start eliminating food waste</h2>
+
+<% unless params.valid? %>
+	<div class='errors'>
+		<h3>There was a problem with your submission</h3>
+		<ul>
+			<% params.error_messages.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%=
+	form_for :provider, '/signup', enctype: 'multipart/form-data' do
+
+		div class: 'input' do
+			label		:email
+			text_field 	:email
+		end
+
+		div class: 'input' do
+			label		:password
+			password_field	:password
+		end 
+
+
+		div class: 'controls' do
+			submit 'Post Signup'
+		end
+	
+	end
+
+%>

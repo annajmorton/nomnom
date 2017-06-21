@@ -1,0 +1,18 @@
+<h2>all the meals!</h2>
+
+<% if meals.any? %>
+	<div id="meals">
+		<% meals.each do |meal| %>
+			<div class="meal">
+				<h3><%= meal.title %></h3>
+				<div><img src=<%= '"' + meal.photo_url + '"'%>></div>
+				<h3><%= meal.description %></h3>
+				<h2>Servings: <%= meal.servings %></h2>
+				<h2>Quantity: <%= meal.quantity %></h2>
+				<div><%= meal.pickup_location %></div>
+			</div>
+		<% end %>		
+	</div>
+<% else %>
+	<p class="placeholder"> We are out of meals.</p>
+<% end %>

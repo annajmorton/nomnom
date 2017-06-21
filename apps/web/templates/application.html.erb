@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nomzster</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="we take food donations from restraurants and destribute them to local memebers of our food group to divert food waste.">
+    <meta name="keywords" content="sustainable food system, nomnom, food waste, locally sourced food, food group, food community">
+    <%= favicon %>
+    <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
+  </head>
+  <body id="top" class="en" style="font-size: 16px">
+  	<div class="container-fluid">
+	  	<nav class="navbar navbar-default navbar-fixed-top">
+	  		<div class="navbar-brand">
+	  			<h3 class="navbar-text">nomzster</h3>
+	  		</div>
+			<a class="navbar-brand pull-right" href="#">
+				<img alt="nom nom monster logo" class="img-responsive" src="/assets/images/monster.png" style="height:100%;">
+			</a>
+	    	
+	  	</nav>
+	    <%= yield %>
+	    <nav class="navbar navbar-default navbar-fixed-bottom">
+	    	<div class="container">
+	    	</div>
+	  	</nav>
+  	</div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+    <%= local :javascript %>
+  </body>
+</html>
