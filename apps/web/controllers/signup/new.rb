@@ -4,5 +4,10 @@ module Web::Controllers::Signup
 
     def call(params)
     end
+
+    def authenticate!
+	      # no-op
+	end
+
   end
 end

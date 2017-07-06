@@ -10,7 +10,7 @@ module Web::Controllers::Signup
     params do
       required(:provider).schema do
         required(:email).filled(:str?, format?: /@/)
-        required(:password).filled(:str?)
+        required(:password).filled(:str?).confirmation
       end 
     end
 
@@ -18,23 +18,29 @@ module Web::Controllers::Signup
     def call(params)
       
     	if params.valid?
-	    	provider_params = params[:provider]
-        password = SCrypt::Password.create(provider_params[:password], :max_time => 0.005)
-
         repo = ProviderRepository.new
-        repo.create_with_credentials(
-          email: provider_params[:email],
-          name: provider_params[:name],
-          credentials: [{ crypted_password: password, provider: 'self' }]
-        )
-
-        cred = CredentialRepository.new.last
-        password2 = SCrypt::Password.new(cred.crypted_password)
-
-        redirect_to '/meals'
+	    	provider_params = params[:provider]
+      
+        if repo.find_by_email(provider_params[:email]).nil?
+          provider = repo.create_crypted_with_email_password(provider_params[:email],provider_params[:password])
+          
+          session[:provider_id] = provider.id
+          session[:prvodier_name] = provider.name
+          
+          flash[:info] = "Hi #{provider.name}! your account was created successfully and we signed you in!"
+          redirect_to '/meals'
+        else    
+          flash[:info] = "#{provider_params[:email]} already has an account. please signin here"
+          redirect_to '/'
+        end
+       
     	else 
     		self.status = 422
     	end 
+    end
+
+    def authenticate!
+      # no-op
     end
 
   end

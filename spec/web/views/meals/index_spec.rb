@@ -55,6 +55,10 @@ describe Web::Views::Meals::Index do
       rendered.wont_include('<p class="placeholder"> We are out of meals.</p>')
     end 
 
+    it 'shows the map' do 
+      rendered.must_include('Here is the map')
+    end
+
   end 
 
 end

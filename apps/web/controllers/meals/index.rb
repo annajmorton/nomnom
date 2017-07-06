@@ -7,5 +7,6 @@ module Web::Controllers::Meals
     def call(params)
     	@meals = MealRepository.new.all
     end
+    
   end
 end

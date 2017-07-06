@@ -1,9 +1,15 @@
 require 'hanami/helpers'
 require 'hanami/assets'
+require_relative './controllers/authentication'
 
 module Web
   class Application < Hanami::Application
     configure do
+
+      # Authentication 
+      controller.prepare do
+        include Web::Authentication
+      end
 
       ##
       # BASIC
@@ -74,7 +80,7 @@ module Web
       #
       # cookies true
       # or
-      # cookies max_age: 300
+      cookies max_age: 86400
 
       # Enable sessions
       # Argument: Symbol the Rack session adapter
@@ -253,11 +259,11 @@ module Web
         frame-ancestors 'self';
         base-uri 'self';
         default-src 'none';
-        script-src 'self';
+        script-src 'self' https: data;
         connect-src 'self';
         img-src 'self' https: data:;
         style-src 'self' 'unsafe-inline' https:;
-        font-src 'self';
+        font-src 'self' https: data;
         object-src 'none';
         plugin-types application/pdf;
         child-src 'self';

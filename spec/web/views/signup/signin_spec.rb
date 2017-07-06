@@ -13,9 +13,9 @@ describe Web::Views::Home::Index do
   end 
 
   it 'sign in --- displays list of errors when user params contains erros' do
-    # rendered.must_include('There was a problem with your submission')
-    # rendered.must_include('Email must be filled')
-    # rendered.must_include('Password must be filled')
+    rendered.must_include('There was a problem with your submission')
+    rendered.must_include('Email must be filled')
+    rendered.must_include('Password must be filled')
   end
 
 end

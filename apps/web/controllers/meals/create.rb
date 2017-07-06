@@ -8,20 +8,20 @@ module Web::Controllers::Meals
     expose :meal
 
     params do
-    	required(:meal).schema do
-    		required(:title).filled(:str?)
-    		required(:description).filled(:str?)
-    		required(:photo).filled(size?: 1..(MEGABYTE * 5))
+        required(:meal).schema do
+            required(:title).filled(:str?)
+            required(:description).filled(:str?)
+            required(:photo).filled(size?: 1..(MEGABYTE * 5))
             required(:pickup_location).filled(:str?)
             required(:servings).filled(:int?)
             required(:quantity).filled(:int?)
-    		required(:provider_id).filled(:int?)
-    	end
+            required(:provider_id).filled(:int?)
+        end
     end
 
 
     def call(params)
-
+        
         if params.valid?
 
             params.get(:meal,:photo).kind_of? Hash and
@@ -33,8 +33,9 @@ module Web::Controllers::Meals
             
             redirect_to '/meals'
         else
-    		self.status = 422
-    	end
+            self.status = 422
+        end
     end
+
   end
 end
