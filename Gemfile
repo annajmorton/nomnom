@@ -34,3 +34,5 @@ end
 group :production do
   # gem 'puma'
 end
+ruby '2.3.0'
+ruby '2.4.0'
