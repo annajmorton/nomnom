@@ -35,16 +35,21 @@ form_for :provider, '/signin', enctype: 'multipart/form-data' do
   end
 %>
 
-<div class="row" style="height:3em;"></div>
+
+<div class="row">
+  <div class="col-md-12" style="height:3em;width:50%"></div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-md-6">
-  	not a member?
+  <div class="col-md-6">
+    <h5>done with waste reduction? <a href="">logout!</a></h5>
   </div>
-  <div class="col-xs-12 col-md-6">
-  	<a href="#">join here!</a>
-  </div> 
+  <div class="col-md-6">
+    <h5>not a member? <a href="/signup/new">join here!</a></h5>
+  </div>
+</div>  
+
+<div class="row">
 </div>
 
 

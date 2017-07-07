@@ -14,16 +14,24 @@
     <%= local :style %>
   </head>
   <body id="top" class="en" style="font-size: 16px">
-  	<div class="container-fluid">
-	  	<nav class="navbar navbar-default navbar-fixed-top">
-	  		<div class="navbar-brand">
-	  			<h3 class="navbar-text">nomzster</h3>
-	  		</div>
-  			<a class="navbar-brand pull-right" href="#">
-  				<img alt="nom nom monster logo" class="img-responsive" src="/assets/monster.png" style="height:100%;">
-  			</a>
-	    	
-	  	</nav>
+  	<nav class="navbar navbar-default navbar-fixed-top" style="height:120px">
+  		<div class="navbar-brand">
+  			<a href="\"><h1 class="navbar-text">nomzter</h1></a>
+  		</div>
+    	<div class="navbar-brand pull-right dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:white">
+          <img alt="nom nom monster logo" class="img-responsive" src="/assets/monster.png">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <ul>
+            <li><a class="dropdown-item" type="button" href="\meals">Meals</a></li>
+            <li><a class="dropdown-item" type="button" href="\">Login/Logout</a></li>
+            <li><a class="dropdown-item" type="button" href="\meals\new">Add-a-Meal</a></li>
+          </ul>
+        </div>
+      </div>
+  	</nav>
+    <div class="container-fluid" style="margin-top:120px">
       <% unless flash[:info].nil? %>
         <div class='info'>
             <%= flash[:info] %>

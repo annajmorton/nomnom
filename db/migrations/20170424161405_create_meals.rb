@@ -4,7 +4,7 @@ Hanami::Model.migration do
       primary_key :id
 
       foreign_key :provider_id, :providers, on_delete: :cascade, null: false
-      column :photo_data, String
+      column :photo_data, String, default: ''
       column :title, String, null: false, size: 10
       column :description, String, null: false, size: 150
       column :servings, Integer, null: false
