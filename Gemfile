@@ -4,7 +4,7 @@ gem 'rake'
 gem 'hanami',       '~> 1.0'
 gem 'hanami-model', '~> 1.0'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'hanami-shrine', '0.2.1'
 gem 'image_processing'
