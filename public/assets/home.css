@@ -1,20 +1,14 @@
 body { 
 	padding-top: 70px;
 	padding-bottom: 70px; 
-	text-align: center;
 }
 
 .navbar-fixed-top {
-	color: orange;
-	background-color: #ffffff;
-	height
+	color: white;
+	background-color: #14e809;
 }
 
 .navbar-fixed-bottom {
 	color: white;
 	background-color: #000000;
-}
-
-.navbar-brand{
-	padding: 5px;
 }
