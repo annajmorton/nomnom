@@ -1,22 +1,7 @@
-<h2>all the meals!</h2>
 
 <% if meals.any? %>
-	<div id="meals" style="visibility:hidden;">
-		<% meals.each do |meal| %>
-			<div class="meal">
-				<h3><%= meal.title %></h3>
-				
-				<% if defined? meals.photo_url %>
-					<div><img src=<%= '"' + meal.photo_url + '"'%>></div>
-				<% end %>
-
-				<h3><%= meal.description %></h3>
-				<h2>Servings: <%= meal.servings %></h2>
-				<h2>Quantity: <%= meal.quantity %></h2>
-				<div class="address"><%= meal.pickup_location %></div>
-			</div>
-		<% end %>		
-	</div>
+<h2>all the meals!</h2>
+<h4>click the marker for more info</h4>
 <% else %>
 	<p class="placeholder"> We are out of meals.</p>
 <% end %>

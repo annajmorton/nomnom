@@ -9,7 +9,7 @@ Hanami::Model.migration do
       column :description, String, null: false, size: 150
       column :servings, Integer, null: false
       column :quantity, Integer, null: false
-      column :pickup_location, String, null: false
+      column :pickup_location, String, null: false, size: 150
 
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false

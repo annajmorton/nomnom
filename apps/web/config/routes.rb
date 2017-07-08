@@ -5,10 +5,13 @@
 post '/signin', to: 'signup#signin'
 get '/signup/new', to: 'signup#new'
 post '/signup', to: 'signup#create'
+
 get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
+
 post '/meals', to: 'meals#create'
 get '/meals/new', to: 'meals#new'
 get '/meals', to: 'meals#index'
+get '/meals/loadboss', to: 'meals#loadboss'
 
 get '/auth/:provider/callback', to: 'session#create'
 post '/auth/:provider/callback', to: 'session#create'
