@@ -10,6 +10,8 @@ GEM
   specs:
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    ansi (1.5.0)
+    builder (3.2.3)
     capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
@@ -17,6 +19,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.1)
     concurrent-ruby (1.0.5)
     dotenv (2.2.1)
     down (4.0.0)
@@ -117,12 +120,18 @@ GEM
     jwt (1.5.6)
     mail (2.6.6)
       mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_magick (4.8.0)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    minitest-reporters (1.1.14)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -144,6 +153,10 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     pg (0.21.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     public_suffix (2.0.5)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -171,6 +184,7 @@ GEM
       dry-types (~> 0.10, >= 0.10.2)
       rom (~> 3.2, >= 3.2.2)
       sequel (~> 4.43)
+    ruby-progressbar (1.8.1)
     scrypt (3.0.5)
       ffi-compiler (>= 1.0, < 2.0)
     sequel (4.48.0)
@@ -178,6 +192,7 @@ GEM
       rack (>= 1.0)
     shrine (2.6.1)
       down (>= 2.3.6)
+    slop (3.6.0)
     thor (0.19.4)
     tilt (2.0.7)
     transproc (1.0.2)
@@ -200,9 +215,11 @@ DEPENDENCIES
   image_processing
   mini_magick (>= 4.3.5)
   minitest
+  minitest-reporters
   omniauth-github
   omniauth-hanami!
   pg
+  pry
   rake
   scrypt
   shotgun
@@ -212,4 +229,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.0
+   1.15.3

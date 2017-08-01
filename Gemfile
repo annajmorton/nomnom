@@ -24,11 +24,13 @@ end
 
 group :test, :development do
   gem 'dotenv', '~> 2.0'
+  gem 'pry'
 end
 
 group :test do
   gem 'minitest'
   gem 'capybara'
+  gem 'minitest-reporters'
 end
 
 group :production do

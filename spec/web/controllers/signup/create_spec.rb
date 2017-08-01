@@ -11,8 +11,8 @@ describe Web::Controllers::Signup::Create do
     cred_repo.clear
   end
 
-  describe 'with valid provider params' do 
-  	let(:params) { Hash[provider: { email: "test@greatwork.com", password: "partypartyparty"}] }
+  describe 'with valid provider params' do
+  	let(:params) { Hash[provider: { email: "test@greatwork.com", password: "partypartyparty", password_confirmation: "partypartyparty"}] }
 
 	  it 'creates a new provider' do
 	  	action.call(params)
