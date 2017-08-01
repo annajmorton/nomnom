@@ -10,6 +10,8 @@ GEM
   specs:
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    ansi (1.5.0)
+    builder (3.2.3)
     capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
@@ -123,6 +125,11 @@ GEM
     mini_magick (4.8.0)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    minitest-reporters (1.1.14)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -171,6 +178,7 @@ GEM
       dry-types (~> 0.10, >= 0.10.2)
       rom (~> 3.2, >= 3.2.2)
       sequel (~> 4.43)
+    ruby-progressbar (1.8.1)
     scrypt (3.0.5)
       ffi-compiler (>= 1.0, < 2.0)
     sequel (4.48.0)
@@ -200,6 +208,7 @@ DEPENDENCIES
   image_processing
   mini_magick (>= 4.3.5)
   minitest
+  minitest-reporters
   omniauth-github
   omniauth-hanami!
   pg
@@ -212,4 +221,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.0
+   1.15.3
