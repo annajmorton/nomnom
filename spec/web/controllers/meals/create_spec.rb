@@ -6,19 +6,20 @@ describe Web::Controllers::Meals::Create do
   let(:action) { Web::Controllers::Meals::Create.new }
   let(:repository) {MealRepository.new}
   let(:provider_repo) {ProviderRepository.new}
-  let(:provider) {provider_repo.create(email:"test@junkjunk.com", password: 'crazypass')}
 
-  photo1 = TestUploadFile::test
-  let(:params1) { Hash[meal: {provider_id: provider.id, photo: photo1, title: 'Good Stuff', description:'this is amazing!', servings: 100, quantity: 3, pickup_location: '1443 South Saint Marys'}] }
-
-  photo2 = TestUploadFile::test
-  let(:params2) { Hash[meal: {provider_id: provider.id, photo: photo2, title: 'Good Stuff', description:'this is amazing!', servings: 100, quantity: 3, pickup_location: '1443 South Saint Marys'}] }
-
-  before do 
+  before :each do 
     repository.clear
-
     provider_repo.clear
     provider = provider_repo.create(email:"test@junkjunk.com", password: 'crazypass')
+
+    # photo upload removed
+    # photo1 = TestUploadFile::test
+    params1 = Hash[meal: {provider_id: provider.id, photo: '', title: 'Good Stuff', description:'this is amazing!', servings: 100, quantity: 3, pickup_location: '1443 South Saint Marys'}]
+
+    # photo upload removed
+    # photo2 = TestUploadFile::test
+    params2 = Hash[meal: {provider_id: provider.id, photo: '', title: 'Good Stuff', description:'this is amazing!', servings: 100, quantity: 3, pickup_location: '1443 South Saint Marys'}]
+  
   end
 
   after :all do 
@@ -63,7 +64,8 @@ describe Web::Controllers::Meals::Create do
 
       errors.dig(:meal, :title).must_equal ['is missing']
       errors.dig(:meal, :description).must_equal ['is missing']
-      errors.dig(:meal, :photo).must_equal ['is missing',"size must be within 1 - 5242880"]
+      # photo upload disabled
+      # errors.dig(:meal, :photo).must_equal ['is missing',"size must be within 1 - 5242880"]
       errors.dig(:meal, :servings).must_equal ['is missing']
       errors.dig(:meal, :quantity).must_equal ['is missing']
       errors.dig(:meal, :pickup_location).must_equal ['is missing']

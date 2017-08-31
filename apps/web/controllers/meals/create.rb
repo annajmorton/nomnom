@@ -22,15 +22,21 @@ module Web::Controllers::Meals
 
     def call(params)
         
+        puts 'bbbbbbb'
+        puts 'why is this passing?'
+        puts 'bbbbbbb'
+        
         if params.valid?
+
             
             params[:meal][:provider_id] = session[:provider_id]
 
-            if params.get(:meal).has_key? :photo
-                params.get(:meal,:photo).kind_of? Hash and
-                params.get(:meal, :photo).has_key? :tempfile and
-                params[:meal][:photo] = params.get(:meal, :photo, :tempfile)    
-            end
+            # photo upload disabled
+            # if params.get(:meal).has_key? :photo
+            #     params.get(:meal,:photo).kind_of? Hash and
+            #     params.get(:meal, :photo).has_key? :tempfile and
+            #     params[:meal][:photo] = params.get(:meal, :photo, :tempfile)    
+            # end
             
             meal = Meal.new(params.get(:meal))
             @meal = MealRepository.new.create(meal)
