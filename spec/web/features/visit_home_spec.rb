@@ -19,7 +19,7 @@ describe 'Visit home and sign into the application' do
 	it 'successfully delivers the home page' do 
 		visit '/'
 
-		page.body.must_include('nomzster')
+		page.body.must_include('Nomzster')
 	end
 
 
